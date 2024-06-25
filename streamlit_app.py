@@ -9,7 +9,7 @@ import altair as alt
 import plotly.graph_objs as go
 
 # Fungsi untuk mengunduh dan mempersiapkan data
-@st.cache
+@st.cache_data
 def load_data(ticker, start, end):
     stock_data = yf.download(ticker, start=start, end=end)
     closing_prices = stock_data['Close'].values.reshape(-1, 1)
