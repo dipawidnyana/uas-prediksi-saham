@@ -110,7 +110,7 @@ if run_button and ticker and start_date and end_date and future_days:
 
     # Tampilkan grafik prediksi dengan Altair
     st.subheader(f'Prediksi harga saham untuk {future_days} hari ke depan')
-    future_dates = pd.date_range(start=stock_data.index[-1], periods=future_days + 1, closed='right')
+    future_dates = pd.date_range(start=stock_data.index[-1], periods=future_days + 1)[1:]
     predicted_data = pd.DataFrame(future_predictions, index=future_dates, columns=['Predicted Close'])
 
     # Tampilkan data historis dan prediksi dengan Altair
